@@ -4,7 +4,7 @@ import User from './User'
 export default class Post extends Component {
 
   render() {
-    const { name, altname, photo, src, alt, descr, id } = this.props.item;
+    const { name, altname, photo, src, alt, descr } = this.props.item;
     return(
       <div className="post">
         <User

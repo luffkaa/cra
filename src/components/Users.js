@@ -38,9 +38,9 @@ export default class Users extends Component {
 
   renderUsers(arr) {
     return arr.map(item => {
-      const {src, alt, name } = item;
+      const {src, alt, name, id } = item;
       return (
-        <User src={src} alt={alt} name={name} min />
+        <User key={id} src={src} alt={alt} name={name} min />
       )
     })
   }

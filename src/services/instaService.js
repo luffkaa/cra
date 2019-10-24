@@ -40,6 +40,7 @@ export default class instaService {
       src: user.src,
       alt: user.alt,
       name: user.name,
+      id: user.id
     }
   }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InstaService from '../services/instaService';
-import User from './User';
+import Post from './Post';
 import ErrorMessage from './Error';
 import MDSpinner from 'react-md-spinner';
 
@@ -28,6 +28,7 @@ export default class Posts extends Component {
       error: false,
       loading: false,
     });
+    console.log(posts)
   }
 
   onError = () => {
@@ -38,27 +39,8 @@ export default class Posts extends Component {
 
   renderItems(arr) {
     return arr.map(item => {
-      const { name, altname, photo, src, alt, descr, id } = item;
-
       return(
-        <div key={id} className="post">
-          <User
-            src={photo}
-            alt={altname}
-            name={name}
-            min
-          />
-          <img
-            src={src}
-            alt={alt}>
-          </img>
-          <div className="post__name">
-            {name}
-          </div>
-          <div className="post__descr">
-            {descr}
-          </div>
-        </div>
+          <Post key={item.id} className="post" item={item} />
       )
     });
   }
